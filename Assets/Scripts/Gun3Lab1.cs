@@ -14,7 +14,7 @@ public class Gun3Lab1 : MonoBehaviour
     public GameObject bonus;
     private Vector3 x;
 
-    public int Ammo // объ€вление свойства
+    public int Ammo
     {
         get
         {
@@ -31,18 +31,12 @@ public class Gun3Lab1 : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     public void AmmoText()
     {
         ammoText.text = "Ammo: " + ammo;
     }
 
-    private void OnTriggerEnter2D(Collider2D col) // ƒл€ бонуса
+    private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "bonus")
         {
@@ -80,7 +74,6 @@ public class Gun3Lab1 : MonoBehaviour
     private Vector3 BonusPos()
     {
         int s = Random.Range(0, 1);
-
         switch (s)
         {
             case 0:
@@ -90,9 +83,9 @@ public class Gun3Lab1 : MonoBehaviour
                 x = new Vector3(98.1f, -48.29997f, 0);
                 break;
         }
-        
         return x;
     }
+
     public void PlayerControl()
     {
         if (Input.GetKeyDown(KeyCode.A))
@@ -103,7 +96,6 @@ public class Gun3Lab1 : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
         }
-
         if (Input.GetKeyDown(KeyCode.D))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector3(50.0f, 0, 0);
@@ -125,7 +117,6 @@ public class Gun3Lab1 : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         PlayerControl();

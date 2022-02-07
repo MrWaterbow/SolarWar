@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class Gun3Lab1EnemyMove : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(EnemyMoveDown());
-        //GetComponent<Rigidbody2D>().velocity = new Vector3(0, -50.0f, 0);
     }
 
-    public IEnumerator EnemyMoveDown() //убрать статику  //GameObject enemy
+    public IEnumerator EnemyMoveDown()
     {
         for (float i = 0; i <= 100 && Gun3Lab1.gameOff == false; i = i + 10)
         {
@@ -30,11 +28,5 @@ public class Gun3Lab1EnemyMove : MonoBehaviour
             StopAllCoroutines();
             Debug.Log("Bullet col");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
